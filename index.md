@@ -1,4 +1,3 @@
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -119,27 +118,13 @@
     <main class="container">
         <section id="about" class="section">
             <h2>About Me</h2>
-            <p>I am Phil Andrei Lazaro, a Software QA Engineer with 2 years of experience in manual and automation testing. I specialize in ensuring high-quality releases by meticulously identifying and resolving issues. In my free time, I enjoy working as a bike mechanic and riding my classic Kawasaki W175.</p>
+            <p id="about-text">Loading...</p>
         </section>
 
         <section id="projects" class="section">
             <h2>Projects</h2>
-            <div class="projects">
-                <div class="project">
-                    <img src="https://via.placeholder.com/300" alt="Project Image">
-                    <h3>E-Commerce Bike Shop</h3>
-                    <p>An e-commerce platform for a local bike shop, showcasing my technical skills applied to real-world needs.</p>
-                </div>
-                <div class="project">
-                    <img src="https://via.placeholder.com/300" alt="Project Image">
-                    <h3>Traxion Pay Wallet</h3>
-                    <p>Performed end-to-end testing and ensured smooth releases for a digital banking app.</p>
-                </div>
-                <div class="project">
-                    <img src="https://via.placeholder.com/300" alt="Project Image">
-                    <h3>Coopnet Teller Machine</h3>
-                    <p>Validated the functionality of the Philippines' first cardless teller machine through rigorous testing.</p>
-                </div>
+            <div id="projects-list" class="projects">
+                <p>Loading...</p>
             </div>
         </section>
 
@@ -153,5 +138,39 @@
     <footer>
         <p>&copy; 2025 Phil Andrei Lazaro | <a href="https://github.com/">GitHub</a></p>
     </footer>
+
+    <script>
+        // Dynamic content for About Me
+        const aboutText = "I am Phil Andrei Lazaro, a Software QA Engineer with 2 years of experience in manual and automation testing. I specialize in ensuring high-quality releases by meticulously identifying and resolving issues. In my free time, I enjoy working as a bike mechanic and riding my classic Kawasaki W175.";
+        document.getElementById('about-text').textContent = aboutText;
+
+        // Dynamic content for Projects
+        const projects = [
+            {
+                title: "E-Commerce Bike Shop",
+                description: "An e-commerce platform for a local bike shop, showcasing my technical skills applied to real-world needs.",
+                image: "https://via.placeholder.com/300"
+            },
+            {
+                title: "Traxion Pay Wallet",
+                description: "Performed end-to-end testing and ensured smooth releases for a digital banking app.",
+                image: "https://via.placeholder.com/300"
+            },
+            {
+                title: "Coopnet Teller Machine",
+                description: "Validated the functionality of the Philippines' first cardless teller machine through rigorous testing.",
+                image: "https://via.placeholder.com/300"
+            }
+        ];
+
+        const projectsList = document.getElementById('projects-list');
+        projectsList.innerHTML = projects.map(project => `
+            <div class="project">
+                <img src="${project.image}" alt="${project.title}">
+                <h3>${project.title}</h3>
+                <p>${project.description}</p>
+            </div>
+        `).join('');
+    </script>
 </body>
 </html>
